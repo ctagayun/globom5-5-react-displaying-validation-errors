@@ -22,7 +22,11 @@ const HouseAdd = () => {
 
   return (
     <>
+      //*Display validation error.
+      //*First check if addHouseMutation has returned an error
       {addHouseMutation.isError && (
+        //*If so display validation summary passing the error property which 
+        //*is now of type AxiosError<Problem>
         <ValidationSummary error={addHouseMutation.error} />
       )}
       

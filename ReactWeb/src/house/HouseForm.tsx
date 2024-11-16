@@ -124,7 +124,8 @@ const HouseForm = ({ house, submitted }: Args) => {
       </div> */}
       <button
         className="btn btn-primary mt-2"
-        disabled={!houseState.address || !houseState.country}
+        //* disabled={!houseState.address || !houseState.country}
+        disabled={!houseState.address}
         onClick={onSubmit}
       >
         Submit

@@ -334,8 +334,26 @@ Module 5: Creating, Updating and Deleting Data
       the payload of an error response will contain our new "Problem" See 
       my comments. Do the same for useUpdateHouse.
 
-      - under the root directory add ValidationSummary.tsx component
-      
+      - under the root directory add ValidationSummary.tsx component (see comments)
+
+      - then go to src/house/HouseAdd and code to display ValidationSummary Component.
+        Do the same for HouseEdit.
+            //*Display validation error.
+            //*First check if addHouseMutation has returned an error
+            {addHouseMutation.isError && (
+              //*If so display validation summary passing the error property which 
+              //*is now of type AxiosError<Problem>
+              <ValidationSummary error={addHouseMutation.error} />
+            )}
+
+      - to test go src/house/HouseForm and temporarily replace 
+          <button
+           className="btn btn-primary mt-2"
+           disabled={!houseState.address}  //Remove client side validation for country so that we can 
+                                           //we can make the ValidationSummary component to display
+           //disabled={!houseState.address || !houseState.country}
+           onClick={onSubmit}
+          >
   Useful links:
      List of Validation attributes  can be found here: https://4sh.nl/annotations
     
