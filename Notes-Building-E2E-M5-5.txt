@@ -354,6 +354,9 @@ Module 5: Creating, Updating and Deleting Data
            //disabled={!houseState.address || !houseState.country}
            onClick={onSubmit}
           >
+        to test do Add House enter Address (dont enter country) --> Click Submit
+        ValidationSummary Component should display
+       
   Useful links:
      List of Validation attributes  can be found here: https://4sh.nl/annotations
     
