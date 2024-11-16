@@ -58,8 +58,13 @@ const useFetchHouse = (id: number) => {
 //*Because for useMutation we don't need cache
 const useAddHouse = () => {
   const queryClient = useQueryClient();
-  const nav = useNavigate(); //*this hookwill be used to navigate to the list of houses once POST is done successfully
+  const nav = useNavigate(); //* this hookwill be used to navigate to the list of houses once POST is done successfully
+ 
+  //*When something goes wrong Axios generate an object called "AxiosError"
+  //*add generic type Problem (defined in src/types/problem.ts) to AxiosError 
+  //*to indicate that the payload of an error response will contain our new "Problem"
   return useMutation<AxiosResponse, AxiosError<Problem>, House>({
+
     //*No cache key here instead we just write the arrow function that executes the request.
     //*(h) means get the house instance and we post that to the API endpoint Axios
     mutationFn: (h) => axios.post(`${config.baseApiUrl}/houses`, h), //* "h" param is the instance of the new house

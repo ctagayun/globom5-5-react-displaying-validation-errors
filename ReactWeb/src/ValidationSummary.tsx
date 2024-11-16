@@ -1,6 +1,8 @@
 import { AxiosError } from "axios";
 import Problem from "./types/problem";
 
+//*Lets create a type for it's props that contains the property error, 
+//*which is "AxiosError" of type "Problem"
 type Args = {
   error: AxiosError<Problem>;
 };

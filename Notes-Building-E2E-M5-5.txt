@@ -327,7 +327,15 @@ Module 5: Creating, Updating and Deleting Data
   6. React Displaying validation errors
       - https://app.pluralsight.com/ilx/video-courses/fbbac3b2-0e56-464b-92f2-0b877f92f12c/8df0ce24-cefa-421a-9111-2ab738544221/253e7626-3174-40ca-9951-7f04d73280a2
 
+      - add  to src/types/problem.ts
 
+      - then go to src/hooks/HouseHook and modify useAddHouse() hook. Add generic 
+      type Problem (defined in src/types/problem.ts) to AxiosError to indicate that 
+      the payload of an error response will contain our new "Problem" See 
+      my comments. Do the same for useUpdateHouse.
+
+      - under the root directory add ValidationSummary.tsx component
+      
   Useful links:
      List of Validation attributes  can be found here: https://4sh.nl/annotations
     
